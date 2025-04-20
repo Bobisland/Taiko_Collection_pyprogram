@@ -44,14 +44,17 @@ for i in range(3):
         print("进入下一步!")
         break
     elif judge_input_user == "n":
-        path_Taiko_songs = input_path_module()
-        
-        config = configparser.ConfigParser()
-        config.read(file_path_ini_name)
-        config.set("Paths","dir_path",path_Taiko_songs)
-        with open(file_path_ini_name,"w") as config_file:
-            config.write(config_file)
-        break
+        path_Taiko_songs = input_path_module(path_Taiko_songs)
+        if path_Taiko_songs != config.get("Paths","dir_path"):   
+            config = configparser.ConfigParser()
+            config.read(file_path_ini_name)
+            config.set("Paths","dir_path",path_Taiko_songs)
+            with open(file_path_ini_name,"w") as config_file:
+                config.write(config_file)
+            break
+        else:
+            print("没有选择!")
+            break
     else:
         print("无效输入，请重试!(无效三次将退出)")
         print("第" + counts(i) + "次!")
