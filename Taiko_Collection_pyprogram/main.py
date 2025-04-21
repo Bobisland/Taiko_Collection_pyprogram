@@ -25,4 +25,5 @@ else:
     with open(file_path_ini_name,"w") as config_file:    #打开文件并赋值到c_f，然后写入到ini
         config.write(config_file)
     print("path配置文件配置完成!")
-"""!这里不用动!"""
+
+
