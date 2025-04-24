@@ -44,7 +44,6 @@ else:
 
 # 更新路径,实现目录功能
 def dir_refresh():
-    global path
     path = input_path_module()
     root_entry_temp.delete(0,tk.END)
     root_entry_temp.insert(0,path)
@@ -75,7 +74,6 @@ root_tkc_temp.tkc_button("选择目录",620,297,7,1,"white",dir_refresh)
 #root_tkc_temp.tkc_button
 #root_tkc_temp.tkc_button
 
-# 实现显示目录功能
 
 
 

@@ -1,6 +1,7 @@
 import tkinter as tk
 import ctypes
 from PIL import Image,ImageTk
+from module_input_path import input_path_module
 
 
 # 设置 DPI 意识
@@ -41,6 +42,9 @@ class tkcreate:
         root_put_image = tk.Label(self.root_temp,image=root_photo,width=width_temp,height=height_temp)
         root_put_image.place(x=x_temp,y=y_temp)
         return root_put_image
-        
+    
+    def tkc_entry_refresh(self):
+        global path
+        path = input_path_module()
 
 
