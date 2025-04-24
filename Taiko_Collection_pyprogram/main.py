@@ -16,7 +16,6 @@ except:
 
 
 ###变量定义###
-i = 0  #temp
 path_Taiko_songs = ""  # 总音乐文件夹的路径变量
 path_Taiko_get_dir = ""  # 需要复制的音乐文件的文件夹路径变量
 path_file_ini_name = r"\Taiko_Collection_pyprogram\config.ini"   # config.ini的文件变量
@@ -51,32 +50,29 @@ def dir_refresh():
 
 # 创建主窗口
 root_start_screen = tk.Tk()
-root_start_screen.title("Launch")
+root_start_screen.title("Launcher")
 root_start_screen.geometry("825x520")
 root_start_screen.resizable(False,False)
 
 # 传递参数给 tkc
 root_tkc_temp = tkcreate(root_start_screen)
 
-# 添加图片
+# 添加图片 (暂时不搞)
 #root_tkc_temp.tkc_image(path_UI_photo,0,0,800,250)
 
 # 添加文本“游戏目录”“version”
-root_tkc_temp.tkc_text("游戏目录(songs)",20,300)
+root_tkc_temp.tkc_text("游戏目录(songs)",20,345)
 root_tkc_temp.tkc_text("v1.0.0",5,495)
 
 # 添加输入框
-root_entry_temp = root_tkc_temp.tkc_entry(150,304,50)
+root_entry_temp = root_tkc_temp.tkc_entry(150,349,50) # 路径输入框
+root_tkc_temp.tkc_entry(150,50,50) # 测试输入框
 
 # 添加按钮“选择目录”“退出”“开始”
 
-root_tkc_temp.tkc_button("选择目录",620,297,7,1,"white",dir_refresh)
-#root_tkc_temp.tkc_button
-#root_tkc_temp.tkc_button
-
-
-
-
+root_tkc_temp.tkc_button("选择游戏目录",620,333,19,2,"white",dir_refresh) # 选择目录
+root_tkc_temp.tkc_button("退出",620,395,19,1,"white",root_start_screen.destroy) # 关闭窗口
+root_tkc_temp.tkc_button("原神启动!",620,435,19,3,"white",None) # 启动按钮
 
 
 
